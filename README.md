@@ -155,3 +155,19 @@ Potential additions:
 - Order tracking
 - Multiple payment options
 - Admin panel for product management
+
+## Image Alt Text Strategy
+For product images, use descriptive alt text:
+- Example: "Handmade lavender soap with dried lavender buds"
+- Example: "Rose garden soap with natural rose petals"
+- Example: "Honey oat soap with organic honeycomb pattern"
+
+For decorative images, use `aria-hidden="true"`
+
+## Image Alt Text Strategy
+For product images, use descriptive alt text:
+- Example: "Handmade lavender soap with dried lavender buds"
+- Example: "Rose garden soap with natural rose petals"
+- Example: "Honey oat soap with organic honeycomb pattern"
+
+For decorative images, use `aria-hidden="true"`
