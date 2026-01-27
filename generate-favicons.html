@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Generator - Bint-e-Samin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #9CAF88;
+            margin-bottom: 10px;
+        }
+        canvas {
+            border: 2px solid #ddd;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        button {
+            background: linear-gradient(135deg, #9CAF88 0%, #6B8E23 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        .preview {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .preview-item {
+            text-align: center;
+        }
+        .instructions {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+        .instructions ol {
+            margin-left: 20px;
+        }
+        .instructions li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧼 Favicon Generator</h1>
+        <p>Generate favicons for Bint-e-Samin Soaps website</p>
+
+        <div class="preview">
+            <div class="preview-item">
+                <p><strong>32x32 (favicon.ico)</strong></p>
+                <canvas id="canvas32" width="32" height="32"></canvas>
+                <br>
+                <button onclick="downloadFavicon(32, 'favicon.ico')">Download favicon.ico</button>
+            </div>
+            <div class="preview-item">
+                <p><strong>180x180 (Apple Touch Icon)</strong></p>
+                <canvas id="canvas180" width="180" height="180"></canvas>
+                <br>
+                <button onclick="downloadFavicon(180, 'apple-touch-icon.png')">Download apple-touch-icon.png</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Click the buttons above to download each favicon file</li>
+                <li>Move the downloaded files to your <code>soap-shop</code> directory:
+                    <ul>
+                        <li><code>favicon.ico</code> → root directory</li>
+                        <li><code>apple-touch-icon.png</code> → root directory</li>
+                    </ul>
+                </li>
+                <li>The files are already linked in all your HTML pages</li>
+                <li>You can delete this <code>generate-favicons.html</code> file after generating the icons</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function drawFavicon(canvas, size) {
+            const ctx = canvas.getContext('2d');
+
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#9CAF88');
+            gradient.addColorStop(1, '#6B8E23');
+
+            // Fill background with gradient
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+
+            // Add rounded corners effect (optional)
+            ctx.globalCompositeOperation = 'destination-in';
+            ctx.beginPath();
+            const radius = size * 0.2;
+            ctx.moveTo(radius, 0);
+            ctx.lineTo(size - radius, 0);
+            ctx.quadraticCurveTo(size, 0, size, radius);
+            ctx.lineTo(size, size - radius);
+            ctx.quadraticCurveTo(size, size, size - radius, size);
+            ctx.lineTo(radius, size);
+            ctx.quadraticCurveTo(0, size, 0, size - radius);
+            ctx.lineTo(0, radius);
+            ctx.quadraticCurveTo(0, 0, radius, 0);
+            ctx.closePath();
+            ctx.fill();
+
+            // Reset composite operation
+            ctx.globalCompositeOperation = 'source-over';
+
+            // Draw soap emoji
+            ctx.font = `bold ${size * 0.6}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('🧼', size / 2, size / 2);
+        }
+
+        function downloadFavicon(size, filename) {
+            const canvas = document.getElementById(`canvas${size}`);
+
+            // For .ico files, we'll download as PNG (browsers accept PNG as favicon)
+            const dataUrl = canvas.toDataURL('image/png');
+
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = dataUrl;
+            link.click();
+
+            alert(`${filename} downloaded! Move it to your soap-shop folder.`);
+        }
+
+        // Draw favicons on page load
+        window.onload = function() {
+            drawFavicon(document.getElementById('canvas32'), 32);
+            drawFavicon(document.getElementById('canvas180'), 180);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Bint-e-Samin Soaps</title>
+    <meta name="description" content="Get in touch with Bint-e-Samin Soaps. Order via WhatsApp, request custom blends, or ask about bulk orders. We're here to help!">
+    <meta name="keywords" content="contact Bint-e-Samin, soap order, WhatsApp order, custom soap, bulk soap order, Pakistan">
+    <meta name="author" content="Bint-e-Samin Soaps">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact Us - Bint-e-Samin Soaps">
+    <meta property="og:description" content="Get in touch with Bint-e-Samin Soaps. Order via WhatsApp, request custom blends, or ask about bulk orders.">
+    <meta property="og:site_name" content="Bint-e-Samin Soaps">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Us - Bint-e-Samin Soaps">
+    <meta name="twitter:description" content="Get in touch with Bint-e-Samin Soaps. Order via WhatsApp, request custom blends, or ask about bulk orders.">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#9CAF88">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://wa.me; frame-ancestors 'none'; form-action 'self' https://wa.me;">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Skip to main content link for keyboard navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <h1><span aria-hidden="true">🧼</span> Bint-e-Samin</h1>
+                    <p class="tagline">Natural Handmade Soaps</p>
+                </a>
+                <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-links" id="navLinks" role="menubar">
+                    <a href="index.html" role="menuitem">Home</a>
+                    <a href="products.html" role="menuitem">Products</a>
+                    <a href="about.html" role="menuitem">About</a>
+                    <a href="faq.html" role="menuitem">FAQ</a>
+                    <a href="contact.html" role="menuitem">Contact</a>
+                    <button class="cart-btn" onclick="toggleCart()" aria-label="Open shopping cart" aria-expanded="false" aria-controls="cartSidebar">
+                        <span aria-hidden="true">🛒</span> Cart <span class="cart-count" id="cartCount" aria-live="polite" aria-label="Items in cart">0</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contact Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>We'd love to hear from you. Send us a message!</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <main id="main-content">
+        <section class="contact-section" aria-labelledby="contact-title">
+            <div class="container">
+                <h2 class="visually-hidden" id="contact-title">Contact Us</h2>
+                <div class="contact-content">
+                    <div class="contact-info" role="region" aria-labelledby="contact-info-title">
+                        <h3 id="contact-info-title">Contact Information</h3>
+                        <div class="info-item">
+                            <span class="info-icon" aria-hidden="true">📱</span>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+92 334 3601488</p>
+                                <a href="https://wa.me/923343601488" class="whatsapp-link" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp (opens in new tab)">
+                                    <span aria-hidden="true">💬</span> Chat on WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon" aria-hidden="true">📧</span>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@pureessencesoaps.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon" aria-hidden="true">📍</span>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Pakistan</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon" aria-hidden="true">🕐</span>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                                <p>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container" role="region" aria-labelledby="contact-form-title">
+                        <h3 id="contact-form-title">Send Us a Message</h3>
+                        <form class="contact-form" id="contactForm" aria-describedby="form-instructions">
+                            <p id="form-instructions" class="visually-hidden">All fields marked as required must be filled out to submit the form.</p>
+                            <div class="form-group">
+                                <label for="name">Your Name <span aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+                                <input type="text" id="name" name="name" required placeholder="Enter your name" autocomplete="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address <span aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+                                <input type="email" id="email" name="email" required placeholder="Enter your email" autocomplete="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" autocomplete="tel">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject <span aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="Product Inquiry">Product Inquiry</option>
+                                    <option value="Bulk Order">Bulk Order</option>
+                                    <option value="Custom Order">Custom Order Request</option>
+                                    <option value="Feedback">Feedback</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message <span aria-hidden="true">*</span><span class="visually-hidden">(required)</span></label>
+                                <textarea id="message" name="message" rows="6" required placeholder="Write your message here..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit" aria-label="Send message via WhatsApp">
+                                <span aria-hidden="true">💬</span> Send Message via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section" role="region" aria-labelledby="faq-title">
+                    <h3 id="faq-title">Frequently Asked Questions</h3>
+                    <div class="faq-grid" role="list">
+                        <div class="faq-item" role="listitem">
+                            <h4>Do you offer bulk discounts?</h4>
+                            <p>Yes! We offer special pricing for bulk orders. Contact us for a custom quote.</p>
+                        </div>
+                        <div class="faq-item" role="listitem">
+                            <h4>Can I request custom scents?</h4>
+                            <p>Absolutely! We love creating custom blends. Share your preferences and we'll craft something special.</p>
+                        </div>
+                        <div class="faq-item" role="listitem">
+                            <h4>How long do the soaps last?</h4>
+                            <p>Our handmade soaps typically last 4-6 weeks with regular use, depending on storage conditions.</p>
+                        </div>
+                        <div class="faq-item" role="listitem">
+                            <h4>Are your products vegan?</h4>
+                            <p>Most of our soaps are vegan. Check individual product descriptions or contact us for specific ingredients.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <aside class="cart-sidebar" id="cartSidebar" role="dialog" aria-label="Shopping cart" aria-hidden="true">
+        <div class="cart-header">
+            <h2 id="cart-title">Your Cart</h2>
+            <button class="close-btn" onclick="toggleCart()" aria-label="Close cart">
+                <span aria-hidden="true">✕</span>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems" role="list" aria-live="polite">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount" id="totalAmount" aria-live="polite">Rs. 0</span>
+            </div>
+            <button class="btn-checkout" onclick="checkoutWhatsApp()" aria-label="Checkout via WhatsApp">
+                <span aria-hidden="true">💬</span> Checkout via WhatsApp
+            </button>
+        </div>
+    </aside>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="toggleCart()" aria-hidden="true"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Bint-e-Samin Soaps. All rights reserved.</p>
+            <p>Contact us: +92 334 3601488</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/contact.js"></script>
+</body>
+</html>

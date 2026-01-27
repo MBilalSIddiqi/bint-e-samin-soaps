@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error | Bint-e-Samin Soaps</title>
+    <meta name="description" content="Something went wrong - We're sorry, but something unexpected happened. Our team is here to help.">
+    <meta name="robots" content="noindex, follow">
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://wa.me; frame-ancestors 'none'; form-action 'self' https://wa.me;">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .error-container {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .error-content {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .error-emoji {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            display: block;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .error-title {
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            font-size: 1.2rem;
+            color: #718096;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-home {
+            background: linear-gradient(135deg, #9CAF88 0%, #6B8E23 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-home:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-back {
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border: 2px solid #667eea;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-back:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .error-suggestions {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #fffaf0;
+            border-radius: 15px;
+            border-left: 4px solid #f6ad55;
+        }
+
+        .error-suggestions h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .error-suggestions ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .error-suggestions li {
+            color: #718096;
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .error-suggestions li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #f6ad55;
+        }
+
+        .whatsapp-contact {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #e6fffa;
+            border-radius: 10px;
+            border-left: 4px solid #25D366;
+        }
+
+        .whatsapp-contact h4 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .whatsapp-contact p {
+            color: #718096;
+            margin-bottom: 1rem;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1fb855;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link for keyboard navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <h1><span aria-hidden="true">🧼</span> Bint-e-Samin</h1>
+                    <p class="tagline">Natural Handmade Soaps</p>
+                </a>
+                <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-links" id="navLinks" role="menubar">
+                    <a href="index.html" role="menuitem">Home</a>
+                    <a href="products.html" role="menuitem">Products</a>
+                    <a href="contact.html" role="menuitem">Contact</a>
+                    <button class="cart-btn" onclick="toggleCart()" aria-label="Open shopping cart" aria-expanded="false" aria-controls="cartSidebar">
+                        <span aria-hidden="true">🛒</span> Cart <span class="cart-count" id="cartCount" aria-live="polite" aria-label="Items in cart">0</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Error Content -->
+    <main id="main-content" class="error-container" role="main">
+        <div class="error-content">
+            <span class="error-emoji" aria-hidden="true">😕</span>
+            <div class="error-code" aria-hidden="true">Oops!</div>
+            <h1 class="error-title">Something Went Wrong</h1>
+            <p class="error-message">
+                We're sorry, but something unexpected happened. Don't worry, it's not your fault! Our team is here to help.
+            </p>
+
+            <div class="error-actions" role="group" aria-label="Navigation options">
+                <a href="index.html" class="btn-home">Go Home</a>
+                <a href="javascript:history.back()" class="btn-back">Go Back</a>
+            </div>
+
+            <div class="error-suggestions" role="region" aria-labelledby="suggestions-title">
+                <h3 id="suggestions-title">Try these solutions:</h3>
+                <ul role="list">
+                    <li>Refresh the page and try again</li>
+                    <li>Clear your browser cache and cookies</li>
+                    <li>Check your internet connection</li>
+                    <li>Try accessing the page from a different browser</li>
+                    <li>Return to our homepage and navigate from there</li>
+                </ul>
+            </div>
+
+            <div class="whatsapp-contact" role="region" aria-labelledby="whatsapp-help-title">
+                <h4 id="whatsapp-help-title">Need Immediate Help?</h4>
+                <p>Contact us directly on WhatsApp and we'll assist you right away!</p>
+                <a href="https://wa.me/923343601488?text=Hi!%20I%20encountered%20an%20error%20on%20the%20Pure%20Essence%20Soaps%20website."
+                   class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp (opens in new tab)">
+                    <span aria-hidden="true">💬</span> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <aside class="cart-sidebar" id="cartSidebar" role="dialog" aria-label="Shopping cart" aria-hidden="true">
+        <div class="cart-header">
+            <h2 id="cart-title">Your Cart</h2>
+            <button class="close-btn" onclick="toggleCart()" aria-label="Close cart">
+                <span aria-hidden="true">✕</span>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems" role="list" aria-live="polite">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount" id="totalAmount" aria-live="polite">Rs. 0</span>
+            </div>
+            <button class="btn-checkout" onclick="checkoutWhatsApp()" aria-label="Checkout via WhatsApp">
+                <span aria-hidden="true">💬</span> Checkout via WhatsApp
+            </button>
+        </div>
+    </aside>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="toggleCart()" aria-hidden="true"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Bint-e-Samin Soaps. All rights reserved.</p>
+            <p>Contact us: +92 334 3601488</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

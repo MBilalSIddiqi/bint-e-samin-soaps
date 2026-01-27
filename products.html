@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - Bint-e-Samin Soaps</title>
+    <meta name="description" content="Browse our premium collection of handmade natural soaps. Lavender, Honey Oat, Mint Fresh, Rose Garden, Citrus Burst, Charcoal Detox, and more. Free WhatsApp ordering!">
+    <meta name="keywords" content="buy natural soaps, handmade soap products, lavender soap, honey soap, charcoal soap, rose soap, Pakistan">
+    <meta name="author" content="Bint-e-Samin Soaps">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Our Products - Bint-e-Samin Soaps">
+    <meta property="og:description" content="Browse our premium collection of handmade natural soaps. 100% natural, eco-friendly, and cruelty-free products.">
+    <meta property="og:site_name" content="Bint-e-Samin Soaps">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Products - Bint-e-Samin Soaps">
+    <meta name="twitter:description" content="Browse our premium collection of handmade natural soaps. 100% natural, eco-friendly, and cruelty-free products.">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#9CAF88">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://wa.me; frame-ancestors 'none'; form-action 'self' https://wa.me;">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Skip to main content link for keyboard navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <h1><span aria-hidden="true">🧼</span> Bint-e-Samin</h1>
+                    <p class="tagline">Natural Handmade Soaps</p>
+                </a>
+                <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-links" id="navLinks" role="menubar">
+                    <a href="index.html" role="menuitem">Home</a>
+                    <a href="products.html" role="menuitem">Products</a>
+                    <a href="about.html" role="menuitem">About</a>
+                    <a href="faq.html" role="menuitem">FAQ</a>
+                    <a href="contact.html" role="menuitem">Contact</a>
+                    <button class="cart-btn" onclick="toggleCart()" aria-label="Open shopping cart" aria-expanded="false" aria-controls="cartSidebar">
+                        <span aria-hidden="true">🛒</span> Cart <span class="cart-count" id="cartCount" aria-live="polite" aria-label="Items in cart">0</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Products Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h2>Our Premium Collection</h2>
+            <p>Handcrafted soaps made with love and natural ingredients</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <main id="main-content">
+        <section class="products-section" aria-labelledby="products-section-title">
+            <div class="container">
+                <h2 class="visually-hidden" id="products-section-title">Browse Products</h2>
+                <!-- Search and Filter Bar -->
+                <div class="filter-bar" role="search" aria-label="Product filters">
+                    <div class="search-box">
+                        <label for="searchInput" class="visually-hidden">Search products</label>
+                        <input type="text" id="searchInput" placeholder="Search soaps..." aria-describedby="resultsCount">
+                        <span class="search-icon" aria-hidden="true">🔍</span>
+                    </div>
+                    <div class="filter-controls">
+                        <label for="priceFilter" class="visually-hidden">Filter by price</label>
+                        <select id="priceFilter" aria-label="Filter by price range">
+                            <option value="all">All Prices</option>
+                            <option value="low">Under Rs. 380</option>
+                            <option value="mid">Rs. 380 - Rs. 420</option>
+                            <option value="high">Above Rs. 420</option>
+                        </select>
+                        <label for="veganFilter" class="visually-hidden">Filter by diet type</label>
+                        <select id="veganFilter" aria-label="Filter by diet type">
+                            <option value="all">All Products</option>
+                            <option value="vegan">🌱 Vegan Only</option>
+                            <option value="non-vegan">🍯 Non-Vegan</option>
+                        </select>
+                        <label for="sortFilter" class="visually-hidden">Sort products</label>
+                        <select id="sortFilter" aria-label="Sort products">
+                            <option value="default">Sort By</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name: A to Z</option>
+                        </select>
+                    </div>
+                </div>
+                <p class="results-count" id="resultsCount" aria-live="polite" role="status"></p>
+                <div class="products-grid" id="productsGrid" role="list" aria-label="Product list">
+                    <!-- Products will be loaded by JavaScript -->
+                </div>
+                <p class="no-results" id="noResults" style="display: none;" role="alert">No products found matching your criteria.</p>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section" aria-labelledby="benefits-title">
+            <div class="container">
+                <h2 class="section-title" id="benefits-title">Why Choose Our Soaps?</h2>
+                <div class="benefits-grid" role="list">
+                    <div class="benefit-card" role="listitem">
+                        <span class="benefit-icon" aria-hidden="true">🌿</span>
+                        <h3>All Natural Ingredients</h3>
+                        <p>We use only the finest organic ingredients sourced from nature. No harsh chemicals, no synthetic fragrances.</p>
+                    </div>
+                    <div class="benefit-card" role="listitem">
+                        <span class="benefit-icon" aria-hidden="true">✋</span>
+                        <h3>Handcrafted Excellence</h3>
+                        <p>Each soap is carefully handmade in small batches to ensure the highest quality and attention to detail.</p>
+                    </div>
+                    <div class="benefit-card" role="listitem">
+                        <span class="benefit-icon" aria-hidden="true">💧</span>
+                        <h3>Gentle & Moisturizing</h3>
+                        <p>Our soaps cleanse without stripping natural oils, leaving your skin soft, smooth, and hydrated.</p>
+                    </div>
+                    <div class="benefit-card" role="listitem">
+                        <span class="benefit-icon" aria-hidden="true">🌍</span>
+                        <h3>Eco-Friendly</h3>
+                        <p>Biodegradable, sustainable, and packaged with minimal environmental impact. Good for you and the planet.</p>
+                    </div>
+                    <div class="benefit-card" role="listitem">
+                        <span class="benefit-icon" aria-hidden="true">🐰</span>
+                        <h3>Cruelty-Free</h3>
+                        <p>Never tested on animals. We believe in ethical and compassionate beauty products.</p>
+                    </div>
+                    <div class="benefit-card" role="listitem">
+                        <span class="benefit-icon" aria-hidden="true">🎨</span>
+                        <h3>Custom Blends</h3>
+                        <p>Looking for something unique? We can create custom scents and formulations just for you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Experience Bint-e-Samin?</h2>
+                    <p>Start your natural skincare journey today</p>
+                    <a href="contact.html" class="btn-primary">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <aside class="cart-sidebar" id="cartSidebar" role="dialog" aria-label="Shopping cart" aria-hidden="true">
+        <div class="cart-header">
+            <h2 id="cart-title">Your Cart</h2>
+            <button class="close-btn" onclick="toggleCart()" aria-label="Close cart">
+                <span aria-hidden="true">✕</span>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems" role="list" aria-live="polite">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount" id="totalAmount" aria-live="polite">Rs. 0</span>
+            </div>
+            <button class="btn-checkout" onclick="checkoutWhatsApp()" aria-label="Checkout via WhatsApp">
+                <span aria-hidden="true">💬</span> Checkout via WhatsApp
+            </button>
+        </div>
+    </aside>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="toggleCart()" aria-hidden="true"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Bint-e-Samin Soaps. All rights reserved.</p>
+            <p>Contact us: +92 334 3601488</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
