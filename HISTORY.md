@@ -92,6 +92,30 @@
 
 ---
 
+### v3.1.4 - 2026-01-31
+**Horizontal Navigation Layout**
+
+**Issue:** Navigation items were positioned vertically; requested to have menu items side by side.
+
+**Solution Implemented:**
+1. Changed navigation layout from vertical to horizontal (row direction)
+2. Positioned menu items side by side instead of stacked
+3. Maintained professional styling with pill buttons and glass effects
+4. Kept mobile navigation vertical for better usability on small screens
+5. Added flex-wrap to handle multiple items responsively
+
+**Files Modified:**
+- assets/css/styles.css - Updated navigation to horizontal layout
+
+**Result:**
+- Menu items now appear side by side horizontally
+- Professional styling maintained with pill buttons
+- Responsive design keeps mobile navigation vertical
+- Navigation still scrolls with page (not sticky)
+- Improved user experience with horizontal layout
+
+---
+
 ### v3.1 - 2026-01-31
 **Visual Design Improvements & Premium Look**
 
