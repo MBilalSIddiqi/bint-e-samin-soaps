@@ -250,6 +250,34 @@
 
 ---
 
+### v3.2.1 - 2026-01-31
+**Fix Footer Links**
+
+**Issue:** Footer links to privacy, refund, and terms pages were not working due to incorrect absolute paths.
+
+**Solution Implemented:**
+1. Changed footer links from absolute paths (/privacy.html) to relative paths (privacy.html)
+2. Updated all HTML files to use correct relative paths for policy pages
+3. Ensured links work correctly on both local and deployed versions
+
+**Files Modified:**
+- index.html - Fixed footer links
+- products.html - Fixed footer links
+- contact.html - Fixed footer links
+- about.html - Fixed footer links
+- faq.html - Fixed footer links
+- error.html - Fixed footer links
+- 404.html - Fixed footer links
+- 500.html - Fixed footer links
+
+**Result:**
+- Footer links now correctly navigate to policy pages
+- Relative paths work on both local and deployed versions
+- All policy pages accessible from footer navigation
+- Improved user experience with working links
+
+---
+
 ### v3.1 - 2026-01-31
 **Visual Design Improvements & Premium Look**
 
