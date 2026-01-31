@@ -176,6 +176,29 @@
 
 ---
 
+### v3.1.7 - 2026-01-31
+**GitHub Pages Deployment Fix**
+
+**Issue:** Footer looked good locally but appeared broken when accessed via GitHub Pages URL due to caching or deployment issues.
+
+**Solution Implemented:**
+1. Forced GitHub Pages rebuild by recreating .nojekyll file
+2. Ensured latest CSS changes are properly deployed
+3. Verified CSS paths are correct for GitHub Pages
+
+**Files Modified:**
+- .nojekyll - Recreated to force rebuild
+- assets/css/styles.css - Confirmed proper CSS paths
+- All HTML files - Verified correct CSS linking
+
+**Result:**
+- GitHub Pages properly updated with latest CSS
+- Footer now displays correctly on live site
+- Consistent appearance between local and deployed versions
+- Caching issues resolved
+
+---
+
 ### v3.1 - 2026-01-31
 **Visual Design Improvements & Premium Look**
 
