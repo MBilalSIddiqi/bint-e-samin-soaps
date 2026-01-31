@@ -31,6 +31,64 @@
     <!-- Content Security Policy -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://wa.me https://www.googletagmanager.com https://*.google-analytics.com; frame-ancestors 'none'; form-action 'self' https://wa.me;">
 
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Bint-e-Samin Soaps",
+      "alternateName": "Bint-e-Samin Natural Handmade Soaps",
+      "url": "https://binte-samin-soaps.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://binte-samin-soaps.com/?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "@id": "https://binte-samin-soaps.com/#store",
+      "name": "Bint-e-Samin Soaps",
+      "alternateName": "Bint-e-Samin Natural Handmade Soaps",
+      "description": "Handcrafted natural soaps made with organic ingredients. 100% natural, eco-friendly, and cruelty-free products.",
+      "url": "https://binte-samin-soaps.com",
+      "logo": "https://binte-samin-soaps.com/favicon.svg",
+      "telephone": "+92-334-3601488",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "PK"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+92-334-3601488",
+        "contactType": "Customer Service",
+        "availableLanguage": ["en", "ur"]
+      },
+      "paymentAccepted": ["Cash on Delivery", "Bank Transfer", "Mobile Wallet"],
+      "priceRange": "PKR 350-450",
+      "currenciesAccepted": "PKR",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "09:00",
+          "closes": "22:00"
+        }
+      ],
+      "sameAs": [
+        "https://wa.me/923343601488"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Natural Handmade Soaps"
+      }
+    }
+    </script>
+
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -39,13 +97,13 @@
 
     <!-- Header -->
     <header>
-        <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar">
             <div class="container">
                 <a href="index.html" class="logo">
                     <h1><span aria-hidden="true">🧼</span> Bint-e-Samin</h1>
                     <p class="tagline">Natural Handmade Soaps</p>
                 </a>
-                <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -58,12 +116,12 @@
                         <li><a href="faq.html">FAQ</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
-                    <button class="cart-btn" onclick="toggleCart()" aria-label="Open shopping cart" aria-expanded="false" aria-controls="cartSidebar">
+                    <button class="cart-btn" aria-label="Open shopping cart" aria-expanded="false" aria-controls="cartSidebar">
                         <span aria-hidden="true">🛒</span> Cart <span class="cart-count" id="cartCount" aria-live="polite" aria-label="Items in cart">0</span>
                     </button>
                 </nav>
             </div>
-        </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -120,7 +178,7 @@
     <aside class="cart-sidebar" id="cartSidebar" role="dialog" aria-label="Shopping cart" aria-hidden="true">
         <div class="cart-header">
             <h2 id="cart-title">Your Cart</h2>
-            <button class="close-btn" onclick="toggleCart()" aria-label="Close cart">
+            <button class="close-btn" aria-label="Close cart">
                 <span aria-hidden="true">✕</span>
             </button>
         </div>
@@ -132,14 +190,14 @@
                 <span>Total:</span>
                 <span class="total-amount" id="totalAmount" aria-live="polite">Rs. 0</span>
             </div>
-            <button class="btn-checkout" onclick="checkoutWhatsApp()" aria-label="Checkout via WhatsApp">
+            <button class="btn-checkout" aria-label="Checkout via WhatsApp">
                 <span aria-hidden="true">💬</span> Checkout via WhatsApp
             </button>
         </div>
     </aside>
 
     <!-- Overlay -->
-    <div class="overlay" id="overlay" onclick="toggleCart()" aria-hidden="true"></div>
+    <div class="overlay" id="overlay" aria-hidden="true"></div>
 
     <!-- Footer -->
     <footer>

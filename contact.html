@@ -45,21 +45,23 @@
                     <h1><span aria-hidden="true">🧼</span> Bint-e-Samin</h1>
                     <p class="tagline">Natural Handmade Soaps</p>
                 </a>
-                <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <nav class="nav-links" id="navLinks" aria-label="Main navigation"><ul>
-                    <a href="index.html" role="menuitem">Home</a>
-                    <a href="products.html" role="menuitem">Products</a>
-                    <a href="about.html" role="menuitem">About</a>
-                    <a href="faq.html" role="menuitem">FAQ</a>
-                    <a href="contact.html" role="menuitem">Contact</a>
-                    <button class="cart-btn" onclick="toggleCart()" aria-label="Open shopping cart" aria-expanded="false" aria-controls="cartSidebar">
-                        <span aria-hidden="true">🛒</span> Cart <span class="cart-count" id="cartCount" aria-live="polite" aria-label="Items in cart">0</span>
-                    </button>
-                </div>
+                <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><button class="cart-btn" id="cartBtn" aria-label="Open shopping cart" aria-expanded="false" aria-controls="cartSidebar">
+                            <span aria-hidden="true">🛒</span> Cart <span class="cart-count" id="cartCount" aria-live="polite" aria-label="Items in cart">0</span>
+                        </button></li>
+                    </ul>
+                </nav>
             </div>
         </nav>
     </header>
@@ -182,7 +184,7 @@
     <aside class="cart-sidebar" id="cartSidebar" role="dialog" aria-label="Shopping cart" aria-hidden="true">
         <div class="cart-header">
             <h2 id="cart-title">Your Cart</h2>
-            <button class="close-btn" onclick="toggleCart()" aria-label="Close cart">
+            <button class="close-btn" aria-label="Close cart">
                 <span aria-hidden="true">✕</span>
             </button>
         </div>
@@ -194,14 +196,14 @@
                 <span>Total:</span>
                 <span class="total-amount" id="totalAmount" aria-live="polite">Rs. 0</span>
             </div>
-            <button class="btn-checkout" onclick="checkoutWhatsApp()" aria-label="Checkout via WhatsApp">
+            <button class="btn-checkout" aria-label="Checkout via WhatsApp">
                 <span aria-hidden="true">💬</span> Checkout via WhatsApp
             </button>
         </div>
     </aside>
 
     <!-- Overlay -->
-    <div class="overlay" id="overlay" onclick="toggleCart()" aria-hidden="true"></div>
+    <div class="overlay" id="overlay" aria-hidden="true"></div>
 
     <!-- Footer -->
     <footer>
