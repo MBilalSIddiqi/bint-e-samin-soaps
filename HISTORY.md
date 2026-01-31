@@ -116,6 +116,32 @@
 
 ---
 
+### v3.1.5 - 2026-01-31
+**Classic Navigation Layout**
+
+**Issue:** Navigation needed classic layout with logo on left and menu items on right, with bullet-point style instead of buttons.
+
+**Solution Implemented:**
+1. Positioned logo on far left and navigation items on far right
+2. Changed menu items from buttons to bullet-point style
+3. Added classic horizontal layout with space-between alignment
+4. Maintained non-sticky behavior so navigation scrolls with page
+5. Updated mobile layout to work with hamburger menu
+6. Kept cart button positioned appropriately
+
+**Files Modified:**
+- assets/css/styles.css - Updated navigation to classic layout with logo on left, menu on right
+
+**Result:**
+- Logo appears on extreme left of navigation
+- Menu items appear on far right with bullet-point separators
+- Clean, classic navigation appearance
+- Non-sticky behavior maintained (scrolls with page)
+- Responsive design works on mobile with hamburger menu
+- Cart button properly positioned
+
+---
+
 ### v3.1 - 2026-01-31
 **Visual Design Improvements & Premium Look**
 
