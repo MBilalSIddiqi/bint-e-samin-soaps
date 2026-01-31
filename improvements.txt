@@ -1,150 +1,149 @@
-🔍 Homepage Code Review – Problems & Fixes
-1. Incorrect ARIA Roles in Navigation
+Act as a senior UI/UX designer and professional frontend developer.
 
-Problem:
-role="menubar" and role="menuitem" are meant for application-style menus, not website navigation. This can confuse screen readers.
+I have a homepage for a handmade natural soap website. The HTML structure, SEO, and accessibility are already implemented, but the website lacks visual appeal and polish.
 
-Current Code:
+Your task is to improve the visual design while keeping the existing structure intact.
 
-<div class="nav-links" role="menubar">
-  <a role="menuitem">Home</a>
-</div>
+🎯 Design Goals
 
+Premium, clean, handmade, organic look
 
-Fix:
-Use semantic HTML and remove unnecessary ARIA.
+Natural & eco-friendly brand feel
 
-<nav aria-label="Main navigation">
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-  </ul>
-</nav>
+Modern but not flashy
 
-2. Inline JavaScript (onclick) in HTML
+Mobile-first and conversion-focused
 
-Problem:
-Inline JS mixes structure with behavior and is harder to maintain and scale.
+🧱 Areas to Improve (WITH EXAMPLES)
+1. Hero Section
 
-Current Code:
+Improve the hero section with a strong visual impact.
 
-<button onclick="toggleCart()">Cart</button>
+What to do:
 
+Add a background image or gradient overlay
 
-Fix:
-Move event handling to JavaScript.
+Improve text hierarchy
 
-<button class="cart-btn">Cart</button>
+Add a secondary CTA
 
-document.querySelector('.cart-btn')
-  .addEventListener('click', toggleCart);
-
-3. Missing Focus Management for Cart Sidebar
-
-Problem:
-When the cart opens, keyboard users are not moved into the dialog, breaking accessibility.
-
-Fix:
-Move focus to the cart and restore it when closed.
-
-cartSidebar.setAttribute("aria-hidden", "false");
-cartSidebar.querySelector("button").focus();
-
-
-On close:
-
-cartSidebar.setAttribute("aria-hidden", "true");
-cartButton.focus();
-
-4. Overly Strict Content Security Policy (CSP)
-
-Problem:
-script-src 'self' blocks analytics, payments, and future integrations.
-
-Current Code:
-
-script-src 'self';
-
-
-Fix:
-Allow trusted third-party services.
-
-script-src 'self' https://www.googletagmanager.com;
-
-5. No Lazy Loading for Product Images
-
-Problem:
-All images will load immediately, slowing page performance on mobile.
-
-Fix:
-Enable native lazy loading.
-
-<img src="soap.jpg" loading="lazy" alt="Lavender Soap">
-
-6. Missing Structured Data (Schema.org)
-
-Problem:
-Search engines can’t identify your business or products clearly.
-
-Fix:
-Add JSON-LD structured data.
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Store",
-  "name": "Bint-e-Samin Soaps",
-  "telephone": "+92-334-3601488",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "PK"
-  }
-}
-</script>
-
-7. Hero Section Lacks Visual Impact
-
-Problem:
-The hero section has no visual anchor, reducing first-impression impact.
-
-Fix:
-Add a background image or gradient.
+Example CSS:
 
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-              url('/assets/img/hero-soap.jpg') center/cover;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url('/assets/img/hero-soap.jpg') center/cover;
+  color: #fff;
 }
 
-8. Footer Lacks Trust & Conversion Elements
+2. Color System
 
-Problem:
-Footer only shows text; no links to policies or social proof.
+Create a consistent color palette using CSS variables.
 
-Fix:
-Add contact and policy links.
+Example:
 
-<a href="https://wa.me/923343601488">WhatsApp</a>
-<a href="/privacy.html">Privacy Policy</a>
-<a href="/refund.html">Refund Policy</a>
-
-9. Missing aria-expanded State Updates
-
-Problem:
-Hamburger and cart buttons do not update aria-expanded, misleading screen readers.
-
-Fix:
-Update state dynamically in JS.
-
-button.setAttribute("aria-expanded", "true");
+:root {
+  --primary: #9CAF88;
+  --secondary: #F6F5F1;
+  --accent: #C28E5C;
+  --text-dark: #2B2B2B;
+}
 
 
-Set to "false" when closed.
+Use these variables consistently across buttons, backgrounds, and text.
 
-10. No Image alt Strategy Defined
+3. Typography
 
-Problem:
-Future images may lack meaningful alt text, hurting accessibility and SEO.
+Improve typography using a professional font pairing.
 
-Fix:
-Use descriptive alt text for products.
+Example:
 
-<img src="rose-soap.jpg" alt="Handmade rose soap with natural petals">
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+
+Improve font sizes, spacing, and line heights.
+
+4. Buttons & CTAs
+
+Make buttons feel premium.
+
+Example:
+
+.btn-primary {
+  background: var(--accent);
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+  transition: all .2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0,0,0,.25);
+}
+
+5. Cards (Products & Features)
+
+Use card layouts instead of flat sections.
+
+Example:
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 15px 40px rgba(0,0,0,.08);
+  transition: transform .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+6. Spacing & Layout
+
+Increase white space to improve readability.
+
+Example:
+
+section {
+  padding: 6rem 0;
+}
+
+.section-title {
+  margin-bottom: 3rem;
+}
+
+7. Trust & Branding Sections
+
+Add visual trust elements.
+
+Example Content:
+
+100% Natural Ingredients
+
+Handmade in Small Batches
+
+Eco-Friendly Packaging
+
+Use icons and short descriptions.
+
+📤 Output Requirements
+
+Provide CSS improvements
+
+Suggest layout changes
+
+Keep changes realistic and implementable
+
+Do NOT rewrite the entire HTML
