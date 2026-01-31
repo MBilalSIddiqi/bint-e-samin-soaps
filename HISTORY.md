@@ -199,6 +199,28 @@
 
 ---
 
+### v3.1.8 - 2026-01-31
+**CSS Syntax Fix**
+
+**Issue:** CSS file contained duplicate rules at the end which were breaking the styles and causing the footer to appear broken on the deployed site.
+
+**Solution Implemented:**
+1. Removed duplicate CSS rules that were breaking the stylesheet
+2. Fixed syntax errors in the CSS file
+3. Ensured proper CSS formatting
+4. Verified all CSS rules are properly structured
+
+**Files Modified:**
+- assets/css/styles.css - Removed duplicate rules and fixed syntax
+
+**Result:**
+- CSS file now properly formatted without syntax errors
+- Styles properly applied to all elements including footer
+- Footer now displays correctly on both local and deployed versions
+- No more broken styling due to malformed CSS
+
+---
+
 ### v3.1 - 2026-01-31
 **Visual Design Improvements & Premium Look**
 
