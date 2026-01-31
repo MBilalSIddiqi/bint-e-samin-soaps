@@ -2,6 +2,31 @@
 
 ---
 
+### v3.2 - 2026-01-31
+**Vertical Navigation & Non-Sticky Header**
+
+**Issue:** Top navigation bar was always stuck at the top of the page and displayed horizontally, which was not preferred.
+
+**Solution Implemented:**
+1. Changed navigation from horizontal to vertical layout
+2. Removed sticky positioning so navigation scrolls with the page
+3. Updated navigation items to stack vertically with centered alignment
+4. Added subtle background to navigation items for better visual distinction
+5. Adjusted mobile styles to work with new vertical layout
+6. Maintained hamburger menu functionality for mobile devices
+
+**Files Modified:**
+- assets/css/styles.css - Updated header styles, navigation layout, and mobile responsiveness
+
+**Result:**
+- Navigation now appears as vertical list instead of horizontal bar
+- Navigation scrolls with the page instead of staying fixed at top
+- Better visual hierarchy with vertical layout
+- Mobile responsiveness maintained
+- All existing functionality preserved
+
+---
+
 ### v3.1 - 2026-01-31
 **Visual Design Improvements & Premium Look**
 
