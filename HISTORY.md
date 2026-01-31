@@ -27,6 +27,24 @@
 
 ---
 
+### v3.1.1 - 2026-01-31
+**Trigger GitHub Pages Rebuild**
+
+**Issue:** Changes to navigation weren't appearing on live site due to caching.
+
+**Solution Implemented:**
+1. Added update to .nojekyll file to trigger GitHub Pages rebuild
+2. Ensured changes are properly deployed to live site
+
+**Files Modified:**
+- .nojekyll - Added line to trigger rebuild
+
+**Result:**
+- GitHub Pages forced to rebuild site
+- Latest navigation changes now visible on live site
+
+---
+
 ### v3.1 - 2026-01-31
 **Visual Design Improvements & Premium Look**
 
