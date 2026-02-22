@@ -140,12 +140,62 @@ const products = [
     }
 ];
 
+// ============================================
+// CUSTOMER REVIEWS DATA
+// ============================================
+
+const reviews = [
+    {
+        id: 1,
+        name: "Ayesha Khan",
+        rating: 5,
+        text: "The Lavender Dreams soap is absolutely divine! My skin feels so soft and the scent lasts all day. Best soap I've ever used.",
+        date: "January 2026"
+    },
+    {
+        id: 2,
+        name: "Sarah Ahmed",
+        rating: 5,
+        text: "I ordered the Rose Garden soap and I'm in love! The packaging was eco-friendly and the soap lathers beautifully.",
+        date: "December 2025"
+    },
+    {
+        id: 3,
+        name: "Fatima Rizvi",
+        rating: 4,
+        text: "Great quality soaps with natural ingredients. The Honey Oat is my favorite - it's so moisturizing for dry skin.",
+        date: "January 2026"
+    },
+    {
+        id: 4,
+        name: "Hira Malik",
+        rating: 5,
+        text: "Finally found soaps that don't irritate my sensitive skin! The Aloe Vera Bliss is gentle yet effective. Highly recommend.",
+        date: "November 2025"
+    },
+    {
+        id: 5,
+        name: "Zainab Hussain",
+        rating: 4,
+        text: "The Charcoal Detox soap has done wonders for my oily skin. Love that it's all natural and cruelty-free too!",
+        date: "December 2025"
+    },
+    {
+        id: 6,
+        name: "Mariam Siddiqui",
+        rating: 5,
+        text: "Bought these as gifts and everyone loved them! The quality is outstanding and the scents are just perfect.",
+        date: "January 2026"
+    }
+];
+
 // Cart State
 let cart = [];
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     loadProducts();
+    renderReviews();
     loadCartFromStorage();
     updateCartUI();
 
@@ -300,6 +350,58 @@ function renderProducts(productList) {
     if (noResults) {
         noResults.style.display = productList.length === 0 ? 'block' : 'none';
     }
+}
+
+// ============================================
+// RENDER REVIEWS
+// ============================================
+
+function renderStarRating(rating) {
+    let stars = '';
+    for (let i = 1; i <= 5; i++) {
+        stars += i <= rating ? '\u2605' : '\u2606';
+    }
+    return stars;
+}
+
+function renderReviews() {
+    const reviewsGrid = document.getElementById('reviewsGrid');
+    if (!reviewsGrid) return;
+
+    reviews.forEach(review => {
+        const card = document.createElement('div');
+        card.className = 'review-card';
+        card.setAttribute('role', 'listitem');
+
+        const stars = document.createElement('div');
+        stars.className = 'review-stars';
+        stars.textContent = renderStarRating(review.rating);
+        stars.setAttribute('aria-label', `${review.rating} out of 5 stars`);
+
+        const text = document.createElement('p');
+        text.className = 'review-text';
+        text.textContent = review.text;
+
+        const footer = document.createElement('div');
+        footer.className = 'review-footer';
+
+        const author = document.createElement('span');
+        author.className = 'review-author';
+        author.textContent = review.name;
+
+        const date = document.createElement('span');
+        date.className = 'review-date';
+        date.textContent = review.date;
+
+        footer.appendChild(author);
+        footer.appendChild(date);
+
+        card.appendChild(stars);
+        card.appendChild(text);
+        card.appendChild(footer);
+
+        reviewsGrid.appendChild(card);
+    });
 }
 
 // Filter Products
