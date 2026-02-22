@@ -2249,3 +2249,79 @@ footer {
     }
 }
 
+/* ============================================
+   SCROLL & PAGE LOAD ANIMATIONS
+   ============================================ */
+
+/* Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hero load animation (above the fold, no scroll trigger needed) */
+.hero-content {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Base: hidden until scrolled into view */
+.animate-on-scroll {
+    opacity: 0;
+}
+
+/* Triggered state */
+.animate-on-scroll.animated.animate-fade-up {
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-on-scroll.animated.animate-fade-in {
+    animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-on-scroll.animated.animate-scale-in {
+    animation: scaleIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Stagger delays for grid items */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .hero-content,
+    .animate-on-scroll,
+    .animate-on-scroll.animated.animate-fade-up,
+    .animate-on-scroll.animated.animate-fade-in,
+    .animate-on-scroll.animated.animate-scale-in {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+

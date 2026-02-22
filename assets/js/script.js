@@ -198,6 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderReviews();
     loadCartFromStorage();
     updateCartUI();
+    initScrollAnimations();
 
     // Add debounced search functionality for products page
     const searchInput = document.getElementById('searchInput');
@@ -279,10 +280,10 @@ function renderProducts(productList) {
 
     productsGrid.innerHTML = '';
 
-    productList.forEach(product => {
+    productList.forEach((product, index) => {
         // Create product card using DOM methods for security (prevents XSS)
         const productCard = document.createElement('div');
-        productCard.className = 'product-card';
+        productCard.className = `product-card animate-on-scroll animate-fade-up stagger-${(index % 3) + 1}`;
         productCard.dataset.id = product.id;
 
         // Add vegan tag if product is vegan
@@ -368,9 +369,9 @@ function renderReviews() {
     const reviewsGrid = document.getElementById('reviewsGrid');
     if (!reviewsGrid) return;
 
-    reviews.forEach(review => {
+    reviews.forEach((review, index) => {
         const card = document.createElement('div');
-        card.className = 'review-card';
+        card.className = `review-card animate-on-scroll animate-fade-up stagger-${(index % 3) + 1}`;
         card.setAttribute('role', 'listitem');
 
         const stars = document.createElement('div');
@@ -892,4 +893,26 @@ function toggleAccordion(button) {
         if (content) content.setAttribute('aria-hidden', 'false');
         if (icon) icon.textContent = '−';
     }
+}
+
+// ============================================
+// SCROLL ANIMATIONS (Intersection Observer)
+// ============================================
+
+function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    if (!animatedElements.length) return;
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    animatedElements.forEach(function(el) {
+        observer.observe(el);
+    });
 }
