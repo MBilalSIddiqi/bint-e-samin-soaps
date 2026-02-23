@@ -2,6 +2,32 @@
 
 ---
 
+### v3.7 - 2026-02-23
+**Added Schema.org Structured Data to Remaining Pages**
+
+**Issue:** Only index.html and products.html had Schema.org JSON-LD markup. The remaining 6 pages were missing structured data, reducing SEO effectiveness.
+
+**Solution Implemented:**
+1. Added `AboutPage` + `Organization` schema to about.html
+2. Added `ContactPage` + `Organization` + `ContactPoint` schema to contact.html
+3. Added `FAQPage` schema with 5 Q&A pairs to faq.html (eligible for Google rich results)
+4. Added `WebPage` + `BreadcrumbList` schema to privacy.html, terms.html, and refund.html
+
+**Files Modified:**
+- about.html - Added AboutPage + Organization schema
+- contact.html - Added ContactPage + Organization + ContactPoint schema
+- faq.html - Added FAQPage schema with 5 Q&A entries
+- privacy.html - Added WebPage + BreadcrumbList schema
+- terms.html - Added WebPage + BreadcrumbList schema
+- refund.html - Added WebPage + BreadcrumbList schema
+
+**Result:**
+- All 8 sitemap pages now have Schema.org structured data
+- FAQ page eligible for Google rich results (expandable Q&A in search)
+- Breadcrumbs may appear in search result URLs
+
+---
+
 ### v3.6 - 2026-02-23
 **Fixed Product Card Scroll Animations Not Triggering**
 
