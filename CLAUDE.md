@@ -208,7 +208,7 @@ All changes must maintain:
 **Tone:** Natural, gentle, trustworthy, professional yet warm
 
 **Messaging:** Emphasize:
-- 100% natural ingredients
+- 90%+ natural ingredients (artificial scents used for fragrance)
 - Handcrafted with care
 - Cruelty-free
 - Eco-friendly packaging

@@ -2,6 +2,30 @@
 
 ---
 
+### v4.1 - 2026-03-02
+**Corrected Natural Ingredients Claims (100% → 90%+)**
+
+**Issue:** Site claimed "100% natural ingredients" but products use artificial scents, making the claim inaccurate.
+
+**Solution Implemented:**
+1. Changed all "100% natural" claims to "90%+ natural" across the site
+2. Updated meta descriptions, Schema.org data, feature headings, and FAQ answers
+3. FAQ now honestly mentions artificial scents are used for fragrance
+4. Updated CLAUDE.md brand guidelines to reflect the accurate claim
+
+**Files Modified:**
+- index.html - Meta descriptions, Schema.org, feature heading
+- products.html - Meta descriptions, Schema.org
+- about.html - Schema.org, stats section, promise section
+- faq.html - Schema.org FAQ, accordion answers
+- CLAUDE.md - Brand guidelines
+
+**Result:**
+- Honest and accurate product claims across the entire site
+- No risk of misleading customers
+
+---
+
 ### v4.0 - 2026-03-02
 **Added Products Dropdown Menu with Badges**
 
