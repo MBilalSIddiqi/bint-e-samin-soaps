@@ -5,13 +5,16 @@
 ### v3.8 - 2026-03-02
 **Fixed Mobile Menu Dropdown Positioning**
 
-**Issue:** On mobile, tapping the hamburger menu opened the nav links much lower than expected because the `.nav-links` dropdown was absolutely positioned with `top: 100%` but the parent container lacked `position: relative`.
+**Issue:** On mobile, tapping the hamburger menu opened the nav links much lower than expected. The `.nav-links` used `position: absolute; top: 100%` inside a column-direction flex container, causing the 100% to include the full container height.
 
 **Solution Implemented:**
-1. Added `position: relative` to `.navbar .container` in the mobile media query so the dropdown anchors correctly below the header
+1. Changed `.navbar .container` from `flex-direction: column` to `flex-direction: row` with `flex-wrap: wrap` on mobile
+2. Removed absolute positioning from `.nav-links` — now flows normally in the document
+3. Centered hamburger button vertically with `top: 50%; transform: translateY(-50%)`
+4. Added `margin-top: 1rem` to `.nav-links` for spacing below the logo
 
 **Files Modified:**
-- assets/css/styles.css - Added `position: relative` to `.navbar .container` at mobile breakpoint
+- assets/css/styles.css - Rewrote mobile navbar container and nav-links positioning
 
 **Result:**
 - Mobile menu now opens directly below the header as expected

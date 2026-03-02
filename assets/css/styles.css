@@ -1163,8 +1163,9 @@ footer {
     }
 
     .navbar .container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
         padding: 1rem;
         position: relative;
     }
@@ -1173,23 +1174,21 @@ footer {
         display: flex;
         position: absolute;
         right: 1rem;
-        top: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
         z-index: 1001;
     }
 
     .nav-links {
         display: none;
-        width: calc(100% - 2rem);
-        position: absolute;
-        top: 100%;
-        left: 1rem;
-        right: 1rem;
+        width: 100%;
         background: linear-gradient(135deg, rgba(156, 175, 136, 0.95) 0%, rgba(107, 142, 35, 0.95) 100%);
         padding: 1.5rem;
         box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         border-radius: 15px;
         z-index: 1000;
         backdrop-filter: blur(10px);
+        margin-top: 1rem;
     }
 
     .nav-links.active {
