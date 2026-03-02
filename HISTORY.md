@@ -2,6 +2,22 @@
 
 ---
 
+### v3.8 - 2026-03-02
+**Fixed Mobile Menu Dropdown Positioning**
+
+**Issue:** On mobile, tapping the hamburger menu opened the nav links much lower than expected because the `.nav-links` dropdown was absolutely positioned with `top: 100%` but the parent container lacked `position: relative`.
+
+**Solution Implemented:**
+1. Added `position: relative` to `.navbar .container` in the mobile media query so the dropdown anchors correctly below the header
+
+**Files Modified:**
+- assets/css/styles.css - Added `position: relative` to `.navbar .container` at mobile breakpoint
+
+**Result:**
+- Mobile menu now opens directly below the header as expected
+
+---
+
 ### v3.7 - 2026-02-23
 **Added Schema.org Structured Data to Remaining Pages**
 
